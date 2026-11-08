@@ -1,0 +1,31 @@
+h1, h3 {
+    font-family: "WindSong", cursive;
+    color:#800020;
+}
+h4{
+    color: #800020;
+}
+#content{
+    font-family: "Clicker Script", cursive;
+    font-size: larger;
+}
+body {
+    background-image: url(christmas.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+}
+
+h1{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    margin-top: 13%;
+    
+}
+#content, h3 {
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    margin-top: 5%;
+}
