@@ -1,31 +1,35 @@
-h1, h3 {
-    font-family: "WindSong", cursive;
-    color:#800020;
-}
-h4{
-    color: #800020;
-}
-#content{
-    font-family: "Clicker Script", cursive;
-    font-size: larger;
-}
 body {
-    background-image: url(christmas.png);
+    background-image: url(background.jpg);
     background-repeat: no-repeat;
-    background-attachment: fixed;  
+    background-attachment: fixed;
     background-size: cover;
 }
 
-h1{
-    display: flex;
-    align-items: center;
-    justify-content:center;
-    margin-top: 13%;
-    
+#header, h3 {
+    font-family: "Petit Formal Script", cursive;
+    color: white;
 }
-#content, h3 {
+
+h1 {
     display: flex;
     align-items: center;
-    justify-content:center;
+    justify-content: center;
+    margin-top: 10%;
+    font-size: 40px;
+}
+
+#content {
+    font-family: "Epunda Slab", serif;
+}
+
+#content,h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 5%;
+}
+
+#audio-container {
+    display: flex;
+    justify-content: center;
 }
