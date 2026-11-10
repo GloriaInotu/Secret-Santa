@@ -10,11 +10,6 @@ window.onload = () => {
         const name = document.getElementById("name").value.trim();
         const gift = document.getElementById("giftlist").value.trim();
 
-        // when there are 10 participants, users will be taken to next page where they can see the list of participants and be allocated a gifter.
-        if(participants.length >=10) {
-            return; 
-        }
-
         // checks for duplicate submissions to the array are done 
         const duplicateName = participants.some(
         participant => participant.name.toLowerCase() === name.toLowerCase());
