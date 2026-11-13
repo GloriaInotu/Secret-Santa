@@ -1,11 +1,11 @@
 body {
-    background-image: url(background.jpg);
+    background-image: url(../Media/background.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
 }
 
-#header, h3, #result  {
+#header, h3{
     font-family: "Petit Formal Script", cursive;
     color: white;
 }
@@ -18,7 +18,7 @@ h1 {
     font-size: 40px;
 }
 
-#content{
+#content, #result{
     font-family: "Epunda Slab", serif;
 }
 
@@ -40,7 +40,10 @@ a {
     display: flex;
     justify-content: center;
 }
-
+#result{
+    font-family: "Epunda Slab", serif;
+    color: red;
+}
 @media (max-width: 500px) {
 
     body {

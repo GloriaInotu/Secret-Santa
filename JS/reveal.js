@@ -49,6 +49,10 @@ window.onload = () => {
         }
 
         const participant = querySnapshot.docs[0].data();
+        if(participant.assignedTo === null){
+            alert("The assigments are not up yet, give the host a sec x ")
+            return;
+        }
         gName.innerHTML = "Their name: " + participant.assignedTo;
         gList.innerHTML = "Wishlist: " + participant.assignedGiftList;
 
