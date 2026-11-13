@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script type="module" src="reveal.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Epunda+Slab:ital,wght@0,300..900;1,300..900&family=Petit+Formal+Script&display=swap" rel="stylesheet">
+</head>
+<body>
+        <div id="header">
+            <h1>Secret Santa Reveal</h1>
+        </div>
+
+
+        <div id="content"> 
+            
+            <form>
+                <label for="getName">Name:</label>
+                <input type="text" id="getName" name="getName" placeholder="Please enter your name" required> <br>
+                <label for="accessCode">Access Code:</label>
+                <input type="text" id="accessCode" name="accessCode" required> <br>
+                <br />
+                <input type="submit" id="submit" value="Who am I gifting?">
+            </form>
+        </div>
+        <a href="index.html"> Home </a>
+        <div id="result">
+            <h2 id="gName">Their name: </h2>
+            <h2 id="gList">Wishlist: </h2>
+        </div>
+
+        <div id="audio-container">
+            <audio controls autoplay loop>
+            <source src="ariana-grande-december.mp3" type="audio/mpeg">
+        </audio>
+        </div>        
+</body>
+
+</html>

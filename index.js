@@ -1,33 +1,64 @@
-window.onload = () => {
-    // get the form element and create an array to store the participants
-    const form = document.querySelector("form");
-    const participants = [];
-    
+import { initializeApp } from "https://www.gstatic.com/firebasejs/13.3.0/firebase-app.js";
 
-    form.addEventListener("submit", event => {
-        // when form is submitted, the inputted values are stored 
+import {
+    getFirestore,
+    collection,
+    addDoc,
+    getDocs,
+    query,
+    where
+} from "https://www.gstatic.com/firebasejs/13.3.0/firebase-firestore.js";
+
+const firebaseConfig = {
+    apiKey: "YOUR_KEY",
+    authDomain: "secret-santa-49de2.firebaseapp.com",
+    projectId: "secret-santa-49de2",
+    storageBucket: "secret-santa-49de2.firebasestorage.app",
+    messagingSenderId: "4784871446",
+    appId: "1:4784871446:web:38cdf196e3696f4e6bfd37",
+    measurementId: "G-1MVDS2HM8H"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+window.onload = () => {
+
+    const form = document.querySelector("form");
+
+    form.addEventListener("submit", async event => {
+
         event.preventDefault();
+
         const name = document.getElementById("name").value.trim();
+ 
         const gift = document.getElementById("giftlist").value.trim();
 
-        // checks for duplicate submissions to the array are done 
-        const duplicateName = participants.some(
-        participant => participant.name.toLowerCase() === name.toLowerCase());
-        if (duplicateName) {
-            alert("dw, your details are already in the list");
+        const code = Math.floor(1000 + Math.random() * 9000).toString();
+
+        const participantQuery = query(
+        collection(db, "participants"),
+        where("nameLower", "==", name.toLowerCase()) );
+
+        const querySnapshot = await getDocs(participantQuery);
+
+        if (!querySnapshot.empty) {
+            alert("dw, your details are already saved");
             return;
         }
 
-        // if name hasn't been pushed to the array earlier, push the inputted name and giftlist to array
-        participants.push({
-            name: name,
-            gift: gift
-        });
+        await addDoc(
+            collection(db, "participants"),
+            {
+                name: name,
+                nameLower: name.toLowerCase(),
+                giftList: gift,
+                code: code,
+                assignedTo: ""
+            } );
 
-        form.reset();  
-        console.log(participants);
-        
-    })
-    
-    
-}
+        alert("Registration successful!\n\nYour access code is " +code+ "\n\n Save this code!!");
+
+        form.reset();
+    });
+};

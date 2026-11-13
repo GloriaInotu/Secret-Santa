@@ -5,7 +5,7 @@ body {
     background-size: cover;
 }
 
-#header, h3 {
+#header, h3, #result  {
     font-family: "Petit Formal Script", cursive;
     color: white;
 }
@@ -18,7 +18,7 @@ h1 {
     font-size: 40px;
 }
 
-#content {
+#content{
     font-family: "Epunda Slab", serif;
 }
 
@@ -27,6 +27,13 @@ h1 {
     align-items: center;
     justify-content: center;
     margin-top: 5%;
+}
+
+a {
+    font-family: "Epunda Slab", serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #audio-container {
