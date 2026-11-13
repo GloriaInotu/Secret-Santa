@@ -49,8 +49,8 @@ window.onload = () => {
         }
 
         const participant = querySnapshot.docs[0].data();
-        if(participant.assignedTo === null){
-            alert("The assigments are not up yet, give the host a sec x ")
+        if(!participant.assignedTo){
+            alert("The Secret Santa draw hasn't been generated yet. Check back in a little while 🎄")
             return;
         }
         gName.innerHTML = "Their name: " + participant.assignedTo;
